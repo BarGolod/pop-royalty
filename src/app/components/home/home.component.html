@@ -1,0 +1,24 @@
+<div id="large-header" class="large-header">
+  <!-- <img
+    src="/assets/img/pop-royalty-background.webp"
+    alt="Background Image"
+    class="background-image"
+  /> -->
+  <div class="title-wrapper">
+    <div class="main-title">
+      <h1 class="title">
+        POP<span class="thin"> ROYALTY</span>
+        <img
+          src="/assets/img/crown.webp"
+          alt="Crown Image"
+          class="crown-image"
+        />
+      </h1>
+    </div>
+    <div class="description-container">
+      <div [innerHtml]="renderedDescription"></div>
+      <div [innerHtml]="renderedDisclaimer"></div>
+    </div>
+    <app-years></app-years>
+  </div>
+</div>

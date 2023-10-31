@@ -1,0 +1,31 @@
+// Colors
+$white: #fff;
+$black: #000;
+$primary: #ff00aa;
+$accent: #07163a;
+$accent-dark: #02050f;
+$box: #ffcee6;
+
+// Text Colors
+$text-color: $black;
+$text-color-light: $white;
+$text-color-primary: $primary;
+$text-color-accent: $accent;
+$text-color-accent-dark: $accent-dark;
+
+$success: #28a745;
+$error: #dc3545;
+
+// Backgrounds
+$main-background: linear-gradient(to bottom, purple, white);
+$tablet-main-background: linear-gradient(to bottom, purple, white);
+$mobile-main-background: linear-gradient(to bottom, purple, white);
+
+$primary-background: #1a191d;
+$container-background: #f2f2f2;
+
+// Layout Breakpoints
+$mobile-width: 480px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$desktop-large-width: 1200px;

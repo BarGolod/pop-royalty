@@ -1,0 +1,35 @@
+<div class="decade">
+  <h2 class="decade-title">
+    THE {{ title }}
+
+    <img [src]="svgIconPath" alt="Icon" class="icon" />
+  </h2>
+</div>
+
+<div class="decade">
+  <div class="square-container">
+    <div class="square" *ngFor="let legend of data.slice(0, data.length / 2)">
+      <img
+        [src]="legend.image"
+        alt="{{ legend.name }}"
+        [matTooltip]="legend.tooltip"
+        matTooltipPosition="above"
+      />
+      <p>{{ legend.name }}</p>
+    </div>
+  </div>
+</div>
+
+<div class="decade" *ngIf="data.length >= halfDataLength">
+  <div class="square-container">
+    <div class="square" *ngFor="let legend of data.slice(data.length / 2)">
+      <img
+        [src]="legend.image"
+        alt="{{ legend.name }}"
+        [matTooltip]="legend.tooltip"
+        matTooltipPosition="above"
+      />
+      <p>{{ legend.name }}</p>
+    </div>
+  </div>
+</div>

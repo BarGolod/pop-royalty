@@ -1,0 +1,33 @@
+@import "./../../../assets/main.scss";
+@import "./../../../assets/variables.scss";
+
+.years-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.upper-line,
+.lower-line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.year-box {
+  width: 30%;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid $black;
+  background-color: $main-background;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, background-color 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: $box;
+    cursor: pointer;
+  }
+}

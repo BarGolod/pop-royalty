@@ -1,0 +1,20 @@
+<div class="years-container">
+  <div class="upper-line">
+    <div
+      *ngFor="let year of years.slice(0, years.length / 2)"
+      class="year-box"
+      (click)="navigateToDecade(year)"
+    >
+      {{ year }}
+    </div>
+  </div>
+  <div class="lower-line">
+    <div
+      *ngFor="let year of years.slice(years.length / 2)"
+      class="year-box"
+      (click)="navigateToDecade(year)"
+    >
+      {{ year }}
+    </div>
+  </div>
+</div>
