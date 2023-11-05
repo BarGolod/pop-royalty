@@ -1,21 +1,16 @@
 <div class="decade">
   <h2 class="decade-title">
-    THE {{ title }}
-
-    <img [src]="svgIconPath" alt="Icon" class="icon" />
+    {{ title }}
+    <img [src]="tuneIcon" alt="Icon" class="icon" />
   </h2>
 </div>
 
 <div class="decade">
   <div class="square-container">
     <div class="square" *ngFor="let legend of data.slice(0, data.length / 2)">
-      <img
-        [src]="legend.image"
-        alt="{{ legend.name }}"
-        [matTooltip]="legend.tooltip"
-        matTooltipPosition="above"
-      />
-      <p>{{ legend.name }}</p>
+      <ng-container
+        *ngTemplateOutlet="legendTemplate; context: { legend: legend }"
+      ></ng-container>
     </div>
   </div>
 </div>
@@ -23,13 +18,37 @@
 <div class="decade" *ngIf="data.length >= halfDataLength">
   <div class="square-container">
     <div class="square" *ngFor="let legend of data.slice(data.length / 2)">
-      <img
-        [src]="legend.image"
-        alt="{{ legend.name }}"
-        [matTooltip]="legend.tooltip"
-        matTooltipPosition="above"
-      />
-      <p>{{ legend.name }}</p>
+      <ng-container
+        *ngTemplateOutlet="legendTemplate; context: { legend: legend }"
+      ></ng-container>
     </div>
   </div>
 </div>
+
+<ng-template #legendTemplate let-legend="legend">
+  <h3>{{ legend.title }}</h3>
+  <img [src]="legend.image" alt="{{ legend.name }}" />
+  <div class="link-container">
+    <a [href]="legend.link" target="_blank" class="custom-link">{{
+      legend.name
+    }}</a>
+    <a
+      *ngIf="legend.spotifyLink"
+      [href]="legend.spotifyLink"
+      target="_blank"
+      class="custom-link"
+      [title]="'Listen to ' + legend.name + ' on Spotify'"
+    >
+      <img [src]="spotifyIcon" alt="Spotify" class="music-icon" />
+    </a>
+    <a
+      *ngIf="legend.appleMusicLink"
+      [href]="legend.appleMusicLink"
+      target="_blank"
+      class="custom-link"
+      [title]="'Listen to ' + legend.name + ' on Apple Music'"
+    >
+      <img [src]="appleMusicIcon" alt="Apple Music" class="music-icon" />
+    </a>
+  </div>
+</ng-template>

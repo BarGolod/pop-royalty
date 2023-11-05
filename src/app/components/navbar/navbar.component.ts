@@ -33,12 +33,14 @@ export class NavbarComponent implements OnInit {
   }
 
   scrollTo(id: string, closeMenu = false): void {
-    const element = document.getElementById(id);
-    if (!element) {
-      this.router.navigate(['/home']);
+    const link = this.navbarLinks.find((link: any) => link.id === id);
+
+    if (link) {
+      this.router.navigate([link.id]);
     } else {
-      element.scrollIntoView({ behavior: 'smooth' });
+      this.router.navigate(['/home']);
     }
+
     if (closeMenu) {
       this.showMenu = false;
     }

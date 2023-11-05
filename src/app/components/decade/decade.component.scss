@@ -17,8 +17,18 @@
     }
 
     .icon path {
-      fill: white; /* Change the fill color of the SVG path to white */
+      fill: $white;
     }
+  }
+
+  .custom-link {
+    margin-right: 10px;
+  }
+
+  .music-icon {
+    width: 20px !important;
+    height: 20px !important;
+    object-fit: unset;
   }
 
   .square-container {
@@ -28,8 +38,8 @@
   }
 
   .square {
-    width: 230px;
-    height: 220px;
+    width: 300px;
+    height: 290px;
     margin: 10px;
     text-align: center;
     border: 1px solid $black;
@@ -41,8 +51,8 @@
   }
 
   .square img {
-    width: 210px;
-    height: 160px;
+    width: 240px;
+    height: 200px;
     object-fit: cover;
     margin-top: 10px;
   }
