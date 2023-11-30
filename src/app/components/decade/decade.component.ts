@@ -14,6 +14,7 @@ export class DecadeComponent implements OnInit {
   data: any;
   currentDecade: string = '';
   title: string = '';
+  description: string = '';
   halfDataLength: number = 0;
   tuneIcon: SafeResourceUrl = '';
   spotifyIcon: SafeResourceUrl = '';
@@ -33,7 +34,10 @@ export class DecadeComponent implements OnInit {
         params['decade'] === 'Honorable Mentions'
           ? 'Honorable Mentions'
           : 'THE ' + params['decade'];
-      this.data = this.dataService.getContentForDecade(params['decade']);
+      this.description = this.dataService.getContentForDecade(
+        params['decade']
+      ).description;
+      this.data = this.dataService.getContentForDecade(params['decade']).data;
       this.halfDataLength = Math.ceil(this.data.length / 2);
     });
     this.initIcons();

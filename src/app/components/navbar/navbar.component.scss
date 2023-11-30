@@ -93,7 +93,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: $main-background;
+      background: $mobile-background;
+      z-index: 999;
       display: flex;
       flex-direction: column;
       align-items: center;
