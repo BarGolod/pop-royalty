@@ -1,6 +1,12 @@
 <div class="main-view">
-  <div id="navbar" class="main-div">
+  <div id="navbar" class="navbar">
     <app-navbar></app-navbar>
   </div>
-  <router-outlet></router-outlet>
+  <div id="home" class="main-div">
+    <router-outlet></router-outlet>
+  </div>
+  <div id="footer" class="main-div">
+    <app-footer></app-footer>
+  </div>
+  <app-scroll-to-top-button></app-scroll-to-top-button>
 </div>

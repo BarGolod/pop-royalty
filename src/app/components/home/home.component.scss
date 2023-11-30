@@ -2,22 +2,16 @@
 @import "./../../../assets/variables.scss";
 
 .large-header {
+  overflow: hidden;
   position: relative;
-  //   .background-image {
-  //     position: absolute;
-  //     top: 0;
-  //     left: 0;
-  //     width: 100%;
-  //     height: 100%;
-  //     opacity: 0.4;
-  //     object-fit: cover;
-  //   }
+  width: 100%;
+  padding: 40px;
 
   .title-wrapper {
     position: relative;
-    z-index: 1; // Place the content on top of the background image
-    text-align: center; // Center-align the content
-    padding: 20px; // Add padding as needed
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
   }
 
   .main-title {
@@ -43,19 +37,60 @@
   }
 
   .description-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 1rem;
+    font-family: helvetica, sans-serif !important;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    padding-bottom: 20px;
+    padding-top: 0px;
     text-align: left;
-    font-size: 1.4rem;
-    font-weight: 500;
+    text-transform: none;
+  }
+
+  [innerHtml] {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
     color: $black;
   }
 
-  @keyframes blinkCursor {
-    to {
-      opacity: 0;
+  .definition {
+    line-height: 2rem;
+  }
+
+  .pre,
+  .post {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+
+  .post {
+    .point {
+      font-size: 1.5rem;
+      display: block;
+      margin: 10px 0;
+      padding-left: 15px;
+      position: relative;
+    }
+
+    .point:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      background-color: $primary;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .point-data {
+      padding-left: 15px;
     }
   }
 }
@@ -88,60 +123,36 @@
 
 @media screen and (max-width: $tablet-width) {
   .large-header {
-    background: $tablet-main-background;
-    padding: 5rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    padding: 0 20px;
   }
 
-  .title-wrapper {
-    .main-title {
-      font-size: 1.2rem;
-    }
+  .main-title {
+    padding: 1rem 0;
+  }
 
-    .description-container {
-      display: flex;
-      flex-direction: column;
-      font-size: 1.2rem;
-    }
+  .crown-image {
+    width: 100px !important;
   }
 }
 
 @media screen and (max-width: $mobile-width) {
   .large-header {
-    background: $mobile-main-background;
-    padding: 5rem;
-  }
-
-  .background-image {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    margin-top: 45px;
-  }
-
-  .social-link {
-    font-size: 1rem !important;
-    width: 2rem !important;
-    height: 2rem !important;
-    line-height: 2rem !important;
-  }
-
-  .contact-button {
-    font-size: 1rem !important;
-    padding: 0.5rem 0.5rem !important;
-  }
-
-  .description-content {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    display: flex;
+    padding: 0 20px;
   }
 
-  .static-text {
-    margin-right: 0;
-    margin-bottom: 0.5rem;
+  .main-title {
+    padding: 1rem 0;
+  }
+
+  .crown-image {
+    width: 100px !important;
   }
 }

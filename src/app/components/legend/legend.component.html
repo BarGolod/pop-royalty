@@ -1,0 +1,26 @@
+<div class="dialog-container">
+  <div class="dialog-content">
+    <div class="left-dialog block1">
+      <h2>{{ legend.name }}</h2>
+      <div class="content-data">
+        <div class="content-description">{{ legend.description }}</div>
+        <div class="content-description">
+          <h3>{{ legend.monumental_album }}</h3>
+          {{ legend.album_description }}
+        </div>
+      </div>
+    </div>
+    <div class="right-dialog block2">
+      <div class="right-content">
+        <img
+          [src]="legend.album_image"
+          [alt]="legend.monumental_album"
+          class="content-album"
+        />
+      </div>
+    </div>
+    <div class="button-container block3">
+      <button class="close-button" (click)="closeDialog()">Close</button>
+    </div>
+  </div>
+</div>

@@ -5,33 +5,44 @@
   </h2>
 </div>
 
-<div class="decade">
-  <div class="square-container">
-    <div class="square" *ngFor="let legend of data.slice(0, data.length / 2)">
-      <ng-container
-        *ngTemplateOutlet="legendTemplate; context: { legend: legend }"
-      ></ng-container>
+<div class="decade-data-container">
+  <div class="decade">
+    <div class="square-container">
+      <div class="square" *ngFor="let legend of data.slice(0, data.length / 2)">
+        <ng-container
+          *ngTemplateOutlet="legendTemplate; context: { legend: legend }"
+        ></ng-container>
+      </div>
     </div>
   </div>
-</div>
-
-<div class="decade" *ngIf="data.length >= halfDataLength">
-  <div class="square-container">
-    <div class="square" *ngFor="let legend of data.slice(data.length / 2)">
-      <ng-container
-        *ngTemplateOutlet="legendTemplate; context: { legend: legend }"
-      ></ng-container>
+  <div class="decade" *ngIf="data.length >= halfDataLength">
+    <div class="square-container">
+      <div class="square" *ngFor="let legend of data.slice(data.length / 2)">
+        <ng-container
+          *ngTemplateOutlet="legendTemplate; context: { legend: legend }"
+        ></ng-container>
+      </div>
     </div>
   </div>
 </div>
 
 <ng-template #legendTemplate let-legend="legend">
-  <h3>{{ legend.title }}</h3>
-  <img [src]="legend.image" alt="{{ legend.name }}" />
+  <h3 class="bold-title">{{ legend.title }}</h3>
+  <img
+    class="legend-image"
+    [src]="legend.image"
+    alt="{{ legend.name }}"
+    (click)="openLegendDialog(legend)"
+    [title]="'Read about ' + legend.name + ' and my feature monumental album'"
+  />
   <div class="link-container">
-    <a [href]="legend.link" target="_blank" class="custom-link">{{
-      legend.name
-    }}</a>
+    <a
+      [href]="legend.link"
+      target="_blank"
+      class="custom-link"
+      [title]="'Read about ' + legend.name + ' on Wikipedia'"
+      >{{ legend.name }}</a
+    >
     <a
       *ngIf="legend.spotifyLink"
       [href]="legend.spotifyLink"

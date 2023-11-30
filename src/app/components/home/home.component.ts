@@ -9,9 +9,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 })
 export class HomeComponent implements OnInit {
   description: string = '';
-  disclaimer: string = '';
   renderedDescription: SafeHtml = '';
-  renderedDisclaimer: SafeHtml = '';
   constructor(
     private dataService: DataService,
     private sanitizer: DomSanitizer
@@ -19,12 +17,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.description = this.dataService.getDescription();
-    this.disclaimer = this.dataService.getDisclaimer();
+
     this.renderedDescription = this.sanitizer.bypassSecurityTrustHtml(
       this.description
-    );
-    this.renderedDisclaimer = this.sanitizer.bypassSecurityTrustHtml(
-      this.disclaimer
     );
   }
 }

@@ -1,10 +1,10 @@
 // Colors
 $white: #fff;
 $black: #000;
-$primary: #ff00aa;
+$primary: #a36fd3;
 $accent: #07163a;
 $accent-dark: #02050f;
-$box: #ffcee6;
+$box: rgb(136, 147, 218);
 
 // Text Colors
 $text-color: $black;
@@ -16,10 +16,12 @@ $text-color-accent-dark: $accent-dark;
 $success: #28a745;
 $error: #dc3545;
 
-// Backgrounds
-$main-background: linear-gradient(to bottom, purple, white);
-$tablet-main-background: linear-gradient(to bottom, purple, white);
-$mobile-main-background: linear-gradient(to bottom, purple, white);
+// Background
+$main-background: radial-gradient(
+  rgba(165, 200, 224, 1) 0%,
+  rgba(150, 180, 210, 1) 50%,
+  rgba(90, 90, 130, 0.6) 100% // Darker purple shade
+);
 
 $primary-background: #1a191d;
 $container-background: #f2f2f2;

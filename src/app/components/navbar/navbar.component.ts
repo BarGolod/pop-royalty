@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { trigger, transition, animate, style } from '@angular/animations';
 import { DataService } from '../../shared/data.service';
@@ -28,11 +28,16 @@ export class NavbarComponent implements OnInit {
     this.navbarLinks = this.dataService.getNavbarLinks();
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.windowWidth = window.innerWidth;
+  }
+
   toggleMenu(): void {
     this.showMenu = !this.showMenu;
   }
 
-  scrollTo(id: string, closeMenu = false): void {
+  scrollTo(id: string, closeMenu?: boolean): void {
     const link = this.navbarLinks.find((link: any) => link.id === id);
 
     if (link) {

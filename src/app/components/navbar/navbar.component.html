@@ -2,7 +2,7 @@
   <div class="navbar-container">
     <div class="navbar-logo">
       <div class="logo">
-        <a [routerLink]="['/home']">HOME</a>
+        <a [routerLink]="['/home']">POP <span class="thin">ROYALTY</span></a>
       </div>
     </div>
     <div *ngIf="windowWidth > 768" class="navbar-links">
@@ -23,9 +23,20 @@
       <div class="close-button" (click)="toggleMenu()">×</div>
       <div class="mobile-menu-links">
         <div *ngFor="let link of navbarLinks">
-          <div class="navbar-link" (click)="scrollTo(link.id, true)">
+          <div
+            *ngIf="link.key !== 'contact'"
+            class="navbar-link"
+            (click)="scrollTo(link.id, true)"
+          >
             {{ link.name }}
           </div>
+          <button
+            *ngIf="link.key === 'contact'"
+            class="navbar-link"
+            (click)="scrollTo(link.id, true)"
+          >
+            {{ link.name }}
+          </button>
         </div>
       </div>
     </div>

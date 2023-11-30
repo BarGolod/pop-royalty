@@ -1,9 +1,4 @@
 <div id="large-header" class="large-header">
-  <!-- <img
-    src="/assets/img/pop-royalty-background.webp"
-    alt="Background Image"
-    class="background-image"
-  /> -->
   <div class="title-wrapper">
     <div class="main-title">
       <h1 class="title">
@@ -16,9 +11,100 @@
       </h1>
     </div>
     <div class="description-container">
-      <div [innerHtml]="renderedDescription"></div>
-      <div [innerHtml]="renderedDisclaimer"></div>
+      <div class="pre" [innerHTML]="renderedDescription"></div>
+      <div class="post">
+        But what is
+        <span class="bold-title">Pop Royalty 👑</span>
+        or a
+        <span class="bold-title">musical LEGEND ⭐</span>?<br />
+        <div class="defintion">
+          How do you define it?<br />Is it determined by the number of years in
+          the industry?<br />Is it based on chart placements, record sales,
+          cultural impact, or notoriety for their actions?<br />Is it about
+          being the most artistic, unique, having the best voice, or the most
+          exceptional lyrics?<br />Is it related to budget or production value,
+          or is it simply having a talented team and a reputable record label
+          behind them?<br />How can we compare generations that had vinyl
+          records and radio to the streaming era?<br />Making into this list is
+          a blend of subjective opinions and a track record of success over the
+          years.<br />Each decade has chosen 10 stars who reached their prime
+          during that specific decade, even though most careers continued
+          beyond.<br />Let's break down what defines a
+          <span class="bold-title">Pop Royalty 👑</span>
+          :
+        </div>
+        <div>
+          <span class="bold-title point">Longevity:</span>
+          <div class="point-data">
+            Legends maintain successful careers over many years or even decades,
+            with their influence persevering through evolving musical trends and
+            generations.
+          </div>
+          <span class="bold-title point">Innovation:</span>
+          <div class="point-data">
+            They introduce groundbreaking and innovative elements to their genre
+            or the music industry as a whole, often pushing boundaries and
+            redefining what is possible in music.
+          </div>
+          <span class="bold-title point">Impact:</span>
+          <div class="point-data">
+            Legends leave a profound mark on the cultural and social landscape.
+            Their music resonates with people on a deep level, often addressing
+            important issues and emotions.
+          </div>
+          <span class="bold-title point">Enduring Popularity:</span>
+          <div class="point-data">
+            Their music remains popular and relevant long after its initial
+            release, standing the test of time and attracting new generations of
+            fans.
+          </div>
+          <span class="bold-title point">Critical Acclaim:</span>
+          <div class="point-data">
+            Legends often receive critical acclaim and recognition for their
+            work, including awards, accolades, and industry honors.
+          </div>
+          <span class="bold-title point">Influence:</span>
+          <div class="point-data">
+            They inspire and influence other artists and musicians. Many
+            contemporary artists frequently cite legends as their inspirations.
+          </div>
+          <span class="bold-title point">Iconic Status:</span>
+          <div class="point-data">
+            Legends are celebrated not only for their music but also for their
+            image and persona, becoming cultural icons in their own right.
+          </div>
+          <span class="bold-title point">Cultural Significance:</span>
+          <div class="point-data">
+            Legends may be associated with specific movements, eras, or moments
+            in music history. Their work reflects and shapes the culture of
+            their time.
+          </div>
+          <span class="bold-title point">Record Sales:</span>
+          <div class="point-data">
+            While not a definitive criterion, many legends achieve high record
+            sales, with some even breaking records for the best-selling albums
+            or singles of all time.
+          </div>
+          <span class="bold-title point">Consistency:</span>
+          <div class="point-data">
+            Legends consistently produce quality music and maintain their
+            reputation over time, avoiding major controversies or downturns in
+            their careers.
+          </div>
+          <span class="bold-title point">Live Performances:</span>
+          <div class="point-data">
+            Their live performances are often legendary in their own right,
+            drawing large audiences and creating memorable experiences.
+          </div>
+          <span class="bold-title point">Legacy:</span>
+          <div class="point-data">
+            Legends leave a lasting legacy not only in terms of their music but
+            also in how they've contributed to the evolution of the music
+            industry itself.
+          </div>
+        </div>
+      </div>
+      <app-years></app-years>
     </div>
-    <app-years></app-years>
   </div>
 </div>

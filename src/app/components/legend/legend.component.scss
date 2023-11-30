@@ -1,0 +1,146 @@
+@import "./../../../assets/main.scss";
+@import "./../../../assets/variables.scss";
+
+.dialog-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  overflow: auto;
+}
+
+.dialog-content {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-rows: auto auto 1fr;
+  gap: 5px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 4px;
+  max-width: 60%;
+  max-height: calc(100vh - 50px);
+  overflow-y: auto;
+
+  @media (max-width: $mobile-width) {
+    max-width: 90%;
+  }
+
+  .left-dialog {
+    grid-row: span 2;
+    padding: 0 15px;
+  }
+
+  .right-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 30px;
+    margin: 16px 0;
+  }
+
+  h3 {
+    font-size: 25px;
+    margin: 16px 0;
+  }
+
+  .content-description {
+    padding-right: 15px;
+  }
+
+  .content-data {
+    font-size: 14px;
+  }
+
+  .right-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+  }
+
+  .content-album {
+    max-width: 230px;
+    max-height: 230px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}
+
+.close-button {
+  background: $accent;
+  color: $white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.close-button:hover {
+  background: $black;
+}
+
+// @media screen and (max-width: $mobile-width) {
+//   grid-template-columns: 1fr; // Change to a single column layout
+
+//   .left-dialog,
+//   .right-dialog {
+//     grid-row: auto; // Reset grid-row for responsiveness
+//     padding: 15px; // Add padding to both left and right dialogs
+//   }
+
+//   .right-dialog {
+//     padding-top: 20px; // Adjust padding for better spacing
+//   }
+
+//   .right-content {
+//     order: -1; // Move the image section to the top in the mobile view
+//   }
+
+//   .button-container {
+//     justify-content: center; // Center the button in the mobile view
+//     align-items: center; // Center the button in the mobile view
+//     margin-top: 10px; // Add margin for spacing
+//   }
+// }
+
+@media screen and (max-width: $desktop-width) {
+  .dialog-content {
+    grid-template-columns: 1fr;
+  }
+
+  .left-dialog,
+  .right-dialog {
+    grid-row: auto;
+    padding: 15px;
+  }
+
+  .right-dialog {
+    padding-top: 20px;
+  }
+
+  .right-content {
+    order: -1;
+  }
+
+  .button-container {
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+}
